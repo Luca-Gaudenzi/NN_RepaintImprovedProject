@@ -37,9 +37,9 @@ from improved_diffusion.script_util import (
     args_to_dict,
 )
 
-#inserito per impedire utilizzo CPU
+
 import os
-#os.environ['CUDA_VISIBLE_DEVICES']='2, 3'
+
 
 
 # Workaround
@@ -115,7 +115,7 @@ def main(conf: conf_mgt.Default_Conf):
         for k in batch.keys():
             #A torch.Tensor is a multi-dimensional matrix containing elements of a single data type.
             if isinstance(batch[k], th.Tensor):
-                #conversione del th.Tensor ad uno con un device "device"
+                
                 batch[k] = batch[k].to(device)
 
         model_kwargs = {}

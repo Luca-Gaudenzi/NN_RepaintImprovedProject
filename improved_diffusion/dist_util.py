@@ -49,7 +49,7 @@ def dev():
         return th.device(f"cuda:{MPI.COMM_WORLD.Get_rank() % GPUS_PER_NODE}")
     return th.device("cpu")
 
-#SOSTITUITA
+
 def dev_new(device):
     """
     Get the device to use for torch.distributed.

@@ -7,12 +7,12 @@ from torch.utils.data import DataLoader, Dataset
 import os
 
 
-#AGGIUNTA
+
 def load_data_yield(loader):
     while True:
         yield from loader
 
-#AGGIUNTA
+
 def load_data_inpa(
     *,
     gt_path=None,
@@ -152,7 +152,7 @@ def _list_image_files_recursively(data_dir):
     return results
 
 
-#AGGIUNTA
+
 class ImageDatasetInpa(Dataset):
     def __init__(
         self,
@@ -233,7 +233,6 @@ class ImageDatasetInpa(Dataset):
         return pil_image
 
 
-#AGGIUNTA
 def center_crop_arr(pil_image, image_size):
     # We are not on a new enough PIL to support the `reducing_gap`
     # argument, which uses BOX downsampling at powers of two first.
