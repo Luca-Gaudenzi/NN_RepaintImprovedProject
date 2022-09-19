@@ -53,8 +53,8 @@ use_ddim: false
 latex_name: RePaint
 method_name: Repaint
 image_size: 64
-model_path: ./path/to/imagenet64_uncond_100M_1500K.pt
-name: face_example
+model_path: ./confs/imagenet64_uncond_100M_1500K.pt
+name: Test5
 inpa_inj_sched_prev: true
 n_jobs: 1
 print_estimated_vars: true
@@ -62,14 +62,14 @@ inpa_inj_sched_prev_cumnoise: false
 schedule_jump_params:
   t_T: 4000
   n_sample: 1
-  jump_length: 1
-  jump_n_sample: 0
+  jump_length: 10
+  jump_n_sample: 2
 data:
   eval:
     paper_face_mask:
       mask_loader: true
-      gt_path: ./path/to/images/gts/dog64
-      mask_path: ./path/to/images/gt_keep_masks/dog64
+      gt_path: ./confs/images/gts/img64_half
+      mask_path: ./confs/images/gt_keep_masks/img64_half
       image_size: 64
       class_cond: false
       deterministic: true
@@ -80,9 +80,9 @@ data:
       batch_size: 1
       return_dataloader: true
       offset: 0
-      max_len: 8
+      max_len: 3
       paths:
-        srs: ./log/dog_example/inpainted
-        lrs: ./log/dog_example/gt_masked
-        gts: ./log/dog_example/gt
-        gt_keep_masks: ./log/dog_example/gt_keep_mask
+        srs: ./log/img_example_Test5/inpainted
+        lrs: ./log/img_example_Test5/gt_masked
+        gts: ./log/img_example_Test5/gt
+        gt_keep_masks: ./log/img_example_Test5/gt_keep_mask

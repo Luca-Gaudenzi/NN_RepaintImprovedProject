@@ -128,14 +128,14 @@ class GaussianDiffusion:
         model_var_type,
         loss_type,
         rescale_timesteps=False,
-        conf=None #parametro aggiunto
+        conf=None 
     ):
         self.model_mean_type = model_mean_type
         self.model_var_type = model_var_type
         self.loss_type = loss_type
         self.rescale_timesteps = rescale_timesteps
 
-        self.conf = conf #parametro aggiunto
+        self.conf = conf 
 
         # Use float64 for accuracy.
         betas = np.array(betas, dtype=np.float64)
